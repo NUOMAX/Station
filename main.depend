@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1775498503 source:d:\station\main\main.cpp
+	"loader.h"
+
+1775497550 d:\station\main\loader.h
+	<string>
+
+1775498573 source:d:\station\main\loader.cpp
+	<windows.h>
+	<conio.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<termios.h>
+	<iostream>
+	<fstream>
+	<vector>
+	<cstring>
+	"loader.h"
+
