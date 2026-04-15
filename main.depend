@@ -17,3 +17,22 @@
 	<cstring>
 	"loader.h"
 
+1776244418 source:d:\station\station\main.cpp
+	"loader.h"
+
+1776244418 d:\station\station\loader.h
+	<string>
+
+1776244098 source:d:\station\station\loader.cpp
+	<windows.h>
+	<conio.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<termios.h>
+	<fcntl.h>
+	<iostream>
+	<fstream>
+	<vector>
+	<cstring>
+	"loader.h"
+

@@ -4,32 +4,34 @@ int main()
 {
     init();
 
-    int px = 20, py = 10;
-    int cx = 0, cy = 0;
+    float px = 20.0f, py = 10.0f;
+    float cx = 0.0f, cy = 0.0f;
     const int MARGIN = 8;
 
-    while(true)
-{
+    while (true)
+    {
         Size ws = getSize();
         clear();
 
-        if(px - cx < MARGIN) cx = px - MARGIN;
-        if(px - cx > ws.w - MARGIN) cx = px - (ws.w - MARGIN);
-        if(py - cy < MARGIN) cy = py - MARGIN;
-        if(py - cy > ws.h - MARGIN) cy = py - (ws.h - MARGIN);
+        if (px - cx < MARGIN) cx = px - MARGIN;
+        if (px - cx > ws.w - MARGIN) cx = px - (ws.w - MARGIN);
+        if (py - cy < MARGIN) cy = py - MARGIN;
+        if (py - cy > ws.h - MARGIN) cy = py - (ws.h - MARGIN);
 
-        drawGrid(cx, cy);
-        draw("ore.txt", 1 - cx, 1 - cy);
-        draw("hero.txt", px - cx, py - cy);
+        drawGrid((int)cx, (int)cy);
+        draw("ore.txt", 1 - (int)cx, 1 - (int)cy);
+        draw("hero.txt", (int)px - (int)cx, (int)py - (int)cy);
 
         render();
 
-        char key = getKey();
-        if(key == 'U') py--;
-        if(key == 'D') py++;
-        if(key == 'L') px--;
-        if(key == 'R') px++;
-        if(key == 'q') break;
+        InputState input = getInput();
+
+        if (input.up)    py -= 0.6f;
+        if (input.down)  py += 0.6f;
+        if (input.left)  px -= 1.0f;
+        if (input.right) px += 1.0f;
+
+        if (input.lastChar == 'q') break;
 
         wait(30);
     }

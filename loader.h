@@ -5,17 +5,26 @@
 
 struct Size
 {
-  int w, h;
+    int w, h;
+};
+
+struct InputState
+{
+    bool up = false;
+    bool down = false;
+    bool left = false;
+    bool right = false;
+    char lastChar = 0;
 };
 
 void init();
 void close();
-Size getSize();
 void clear();
+void render();
+void wait(int ms);
 void drawGrid(int camX, int camY);
 void draw(const std::string& file, int x, int y);
-void render();
-char getKey();
-void wait(int ms);
+Size getSize();
+InputState getInput();
 
 #endif
